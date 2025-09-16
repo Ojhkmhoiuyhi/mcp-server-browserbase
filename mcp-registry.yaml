@@ -1,0 +1,55 @@
+args:
+- npm
+- run
+- build
+- "&&"
+- node
+- index.js
+command: npx
+config_schema:
+  properties:
+    browserbase_api_key:
+      description: BROWSERBASE_API_KEY environment variable
+      type: string
+    browserbase_project_id:
+      description: BROWSERBASE_PROJECT_ID environment variable
+      type: string
+    eval_pass_threshold:
+      description: EVAL_PASS_THRESHOLD environment variable
+      type: string
+    gemini_api_key:
+      description: GEMINI_API_KEY environment variable
+      type: string
+    openai_api_key:
+      description: OPENAI_API_KEY environment variable
+      type: string
+    pass_threshold:
+      description: PASS_THRESHOLD environment variable
+      type: string
+  required:
+  - GEMINI_API_KEY
+  - PASS_THRESHOLD
+  - OPENAI_API_KEY
+  - BROWSERBASE_API_KEY
+  - BROWSERBASE_PROJECT_ID
+  - EVAL_PASS_THRESHOLD
+  type: object
+description: MCP server for AI web browser automation using Browserbase and Stagehand
+env:
+- name: GEMINI_API_KEY
+  value: config.gemini_api_key
+- name: PASS_THRESHOLD
+  value: config.pass_threshold
+- name: OPENAI_API_KEY
+  value: config.openai_api_key
+- name: BROWSERBASE_API_KEY
+  value: config.browserbase_api_key
+- name: BROWSERBASE_PROJECT_ID
+  value: config.browserbase_project_id
+- name: EVAL_PASS_THRESHOLD
+  value: config.eval_pass_threshold
+license: Apache-2.0
+owner: browserbase
+package: "@browserbasehq/mcp-server-browserbase"
+server_name: "@browserbasehq/mcp-server-browserbase"
+vendor: Cprime
